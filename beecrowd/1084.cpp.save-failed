@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+#define bn '\n'
+using namespace std;
+
+int main(){
+   //freopen("input.txt","r",stdin);
+    //freopen("output.txt","w",stdout);
+    //ios_base::sync_with_stdio(0);
+    //cin.tie(0); cout.tie(0);
+
+        int n,d;
+        long long res;
+        vector<int> vec;
+
+        /*while(cin >> n >> d && n != 0 && d != 0){
+        string line;
+        cin>>line;
+
+        for(char c: line){
+            vec.push_back(c - '0');
+        }
+
+        int h = 0;
+        while(h<10 && d>0){
+                auto it = find_first_of(vec.begin(),vec.end(),&h,&h+1);
+                if(it!=vec.end()){
+                    vec.erase(it);
+                    d--;
+                }
+                else{
+                    h++;
+                }
+        }
+
+        for (int i = 0; i < vec.size(); i++) {
+        cout<<vec[i];
+        }
+        cout<<bn;
+
+        vec.clear();
+    }*/
+
+
+    return 0;
+}

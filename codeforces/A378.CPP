@@ -11,6 +11,8 @@
 #define ub upper_bound
 #define fst first
 #define snd second
+#define ll long long int
+#define stolower(str) transform(str.begin(), str.end(), str.begin(), ::tolower)
 
 #define bn '\n'
 using namespace std;
@@ -21,24 +23,34 @@ int main(){
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
 
-	int n;
-	cin>>n;
-	vector<vector<int>> m1(n,vector<int>(n)),m2(n,vector<int>(n));
-	
-	set<int> ds; // debajo de la seg diagonal de m2
-	forn(i,n)forn(j,n)cin>>m1[i][j];
-	forn(i,n)forn(j,n)cin>>m2[i][j];
-	for(int i = 1; i<n;i++){
-		for(int j=n-1; j > n-i-1; j--){
-			ds.insert(m2[i][j]);
-		}
-	}
-	for(int i=0; i<n;i++){
-		if(ds.find(m1[i][i]) == ds.end() ){ 
-			cout<<"no"<<bn;
-			return 0;
-		}
-	}
-	cout<<"yes"<<bn;
+    int n,m;
+    int cn=0,cm=0,ce=0;;
+
+    bool s=false;
+    cin>>n>>m;
+    if(n>m){
+        swap(n,m);
+        s=true;
+    }
+
+    for(int i = 1; i<=6 ;i++){
+
+        if(abs(n-i)==abs(m-i)){
+            ce++;
+        }
+        else if(abs(n-i)<abs(m-i)){
+            cn++;
+        }
+        else{
+            cm++;
+        }
+    }
+
+    if(!s){
+        cout<<cn<<" "<<ce<<" "<<cm;
+    }
+    else cout<<cm<<" "<<ce<<" "<<cn;
+
     return 0;
 }
+
